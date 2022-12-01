@@ -1,0 +1,174 @@
+/* Store this code in 'style.css' file inside the 'static' folder*/
+@import url('https://fonts.google.com/specimen/Comforter+Brush?category=Handwriting&preview.text=Evento&preview.text_type=custom');
+
+
+body{
+    height: 100%;
+    width: 100%;
+}
+.header{
+    padding: 5px 120px;
+    width: 150px;
+    height: 70px;
+    background-color: #ffffff;
+}
+
+
+.border{
+    /*padding: 60px 30px;*/
+    width: 400px;
+    height: 500px;
+    border: 5px solid #797777;
+    border-radius: 0px;
+    background-color: #ffffff;
+}
+
+.btn {
+    padding: 10px 40px;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Nunito',sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.textbox{
+    padding: 10px 40px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+}
+    
+::placeholder {
+    color: #302e2e73;
+    opacity: 1;
+    font-family: 'Nunito',sans-serif;
+    font-weight: bold;
+}
+
+.word{
+    color: #000000;
+    font-family: 'Nunito',sans-serif;
+    font-weight: bold;
+}
+
+.bottom{
+    color: #000000;
+    font-family: 'Nunito',sans-serif;
+    font-weight: bold;
+}
+
+.login_background
+{
+    height: 90%;
+    width: 800px;
+    background-image:url('https://img.freepik.com/free-vector/luxury-abstract-gold-background-with-shiny-elements_23-2148827898.jpg?w=2000');
+    background-size: cover;
+    backdrop-filter: none;
+    background-repeat: no-repeat;
+    margin:auto;
+    overflow:hidden;
+    /*background:linear-gradient(90deg, rgba(89,13,114,0.9223039557619923) 0%, rgba(151,43,169,1) 40%, rgba(112,211,236,1) 100%);*/
+}
+.option
+{
+    height: 100%;
+    width: 800px;
+    background-image:url('https://www.teahub.io/photos/full/24-242844_college-events.jpg');
+    background-size:cover;
+    backdrop-filter: none;
+    background-repeat: no-repeat;
+    margin:auto;
+    overflow:hidden;
+    /*background:linear-gradient(90deg, rgba(89,13,114,0.9223039557619923) 0%, rgba(151,43,169,1) 40%, rgba(112,211,236,1) 100%);*/
+}
+.button
+{
+  background-color: white;
+  color: black;
+  border: 2px solid #f6742f;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 250px;
+  text-align: center;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #f6742f;
+  color: white;
+}
+
+.header1 {
+    /*padding: 10px;*/
+    text-align: center;
+    font-family: "Comforter Brush", cursive;
+    color:white;
+    font-size: 30px;
+    
+}
+.clg_details {
+    padding: 60px 40px;
+    width: 500px;
+    height: 520px;
+    text-align: center;
+    font-family: "Comforter Brush", cursive;
+    background: #f2c982;
+    color: white;
+}
+.textboxes {
+    border:0px;
+    width:500px;
+    margin:10px auto;
+}
+  
+label {
+  display:inline-block;
+  width:200px;
+  margin-left:30px;
+  text-align:justify;
+}
+
+.clg_event_details
+{
+    height: 90%;
+    width: 800px;
+    background-image: url('https://www.aphrabehn.online/wp-content/uploads/sites/5/2022/05/image-from-rawpixel-id-3370074-original-1024x683.jpeg');
+    background-size:cover;
+    backdrop-filter: none;
+    background-repeat: no-repeat;
+    margin:auto;
+    /*overflow:hidden;*/
+}
+
+.confirm_events
+{
+    height: 90%;
+    width: 800px;
+    background-image: url('https://kcl.ac.uk//newimages/folsm/thumbnail-newsevents/bmb/background-2462434-340.xf9954149.jpg?w=380&h=253&crop=380,229,0,12');
+    background-size:cover;
+    backdrop-filter: none;
+    background-repeat: no-repeat;
+    margin:auto;
+    overflow:hidden;
+}
+
+:link{
+    text-decoration: none;
+    color: black;
+}
+
+.options{
+    height: 100%;
+    width: 800px;
+    /*background-image:url('https://www.teahub.io/photos/full/24-242844_college-events.jpg');*/
+    background-size:cover;
+    backdrop-filter: none;
+    background-repeat: no-repeat;
+    margin:auto;
+    overflow:hidden;
+    background:linear-gradient(90deg, rgba(89,13,114,0.9223039557619923) 0%, rgba(151,43,169,1) 40%, rgba(112,211,236,1) 100%);
+}
