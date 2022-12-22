@@ -150,12 +150,25 @@
 
             <form action="{{ url_for('update') }}" method="POST">
 
+               <div class="form-group">
+
+
+                  <label>Event ID:</label>
+                   <!-- <input type="hidden"  name="slno" value="{{row.0}}"> -->
+
+                  <input type="text" class="form-control" name="slno" value="{{row.0}}">
+
+
+               </div>
+
+
+
 
                <div class="form-group">
 
 
                   <label>Event Name:</label>
-                   <!-- <input type="hidden"  name="slno" value="{{row.0}}"> -->
+                  
 
                   <input type="text" class="form-control" name="event_name" value="{{row.1}}">
 
@@ -212,7 +225,7 @@
 
                   <label>Description:</label>
 
-                  <input type="text" class="form-control" name="desc" value="{{row.6}}">
+                  <input type="text" class="form-control" name="description" value="{{row.6}}">
 
 
                </div>
@@ -263,8 +276,7 @@
         </div>
 
 
-<!-- Modal -->
-
+<!-- Modal1 -->
 
 <div id="myModal" class="modal fade" role="dialog">
 
@@ -292,77 +304,82 @@
 
             <form action="{{ url_for('insert') }}" method="POST">
 
-
                <div class="form-group">
+                  <!-- <input type="hidden" class="form-control" name="slno"  required="1"> -->
 
+                  <label>Event ID:</label>
+                  <input type="text" class="form-control" name="slno" required="1">
 
-                  <label>Event Name:</label>
-                  <input type="text" class="form-control" name="event_name" required="1">
+                  <div class="form-group">
+                  
 
-
-               </div>
-
-
-                <div class="form-group">
-
-
-                  <label>Event Type:</label>
-                  <input type="text" class="form-control" name="event_type" required="1">
-
-
-               </div>
-
-
-                <div class="form-group">
-
-
-                  <label>Start Date:</label>
-                  <input type="text" class="form-control" name="start_date" required="1">
-
-
-               </div>
-
-               <div class="form-group">
-
-
-                  <label>End Date:</label>
-                  <input type="text" class="form-control" name="end_date" required="1">
-
-
-               </div>
-
-
-               <div class="form-group">
-
-
-                  <label>Fee:</label>
-                  <input type="text" class="form-control" name="fee" required="1">
-
-
-               </div>
-
-               <div class="form-group">
-
-
-                  <label>Description:</label>
-                  <input type="text" class="form-control" name="desc" required="1">
-
-
-               </div>
-
-
-
-               <div class="form-group">
-
-
-                  <button class="btn btn-primary" type="submit">Insert Event</button>
-
-
-               </div>
-
+                     <label>Event Name:</label>
+                     <input type="text" class="form-control" name="event_name" required="1">
+   
+   
+                  </div>
+   
+   
+                   <div class="form-group">
+   
+   
+                     <label>Event Type:</label>
+                     <input type="text" class="form-control" name="event_type" required="1">
+   
+   
+                  </div>
+   
+   
+                   <div class="form-group">
+   
+   
+                     <label>Start Date:</label>
+                     <input type="text" class="form-control" name="start_date" required="1">
+   
+   
+                  </div>
+   
+                  <div class="form-group">
+   
+   
+                     <label>End Date:</label>
+                     <input type="text" class="form-control" name="end_date" required="1">
+   
+   
+                  </div>
+   
+   
+                  <div class="form-group">
+   
+   
+                     <label>Fee:</label>
+                     <input type="text" class="form-control" name="fee" required="1">
+   
+   
+                  </div>
+   
+                  <div class="form-group">
+   
+   
+                     <label>Description:</label>
+                     <input type="text" class="form-control" name="description" required="1">
+   
+   
+                  </div>
+   
+   
+   
+                  <div class="form-group">
+   
+   
+                     <button class="btn btn-primary" type="submit">Insert Event</button>
+   
+   
+                  </div>
 
             </form>
-
+ 
+            <div class="msg">{{ msg }}</div>
 
          </div>
 
@@ -383,7 +400,6 @@
 
 
 </div>
-
 
 
 
