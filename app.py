@@ -62,7 +62,7 @@ def login():
             # data = (id)
             # cursor.execute(insert_stmt, data)
             # mysql.connection.commit()
-            return render_template('index2.html',msg=msg)
+            return redirect(url_for('index2'))
         elif not college or not id or not username or not password :
             msg = 'Details missing!'
         else:
@@ -209,25 +209,12 @@ def index2():
     cur.close()
     return render_template('index2.html', eventss=data )
 
-# @app.route('/insert', methods = ['POST','GET'])
-# def insert():
-#     global slno
-#     if request.method == "POST":
-#         flash("Data Inserted Successfully")
-#         slno = request.form['slno']
-#         cur = mysql.connection.cursor()
-#         cur.execute("""
-#                UPDATE eventss
-#                SET slno=%s
-#                WHERE id=%s
-#             """, (slno,id))
-#         mysql.connection.commit()
-#         return redirect(url_for('insert2'))
 
 @app.route('/insert', methods = ['POST','GET'])
 def insert():
+    global event_type
     if request.method == "POST":
-        flash("Data Inserted Successfully")
+        # flash("Data Inserted Successfully")
         slno = request.form['slno']
         event_name = request.form['event_name']
         event_type = request.form['event_type']
@@ -238,35 +225,8 @@ def insert():
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO eventss (id,slno,event_name, event_type, start_date,end_date,fee,description) VALUES (%s, %s,%s, %s, %s,%s,%s,%s)", (id,slno, event_name, event_type, start_date,end_date,fee,description))
         mysql.connection.commit()
+        flash("Data Inserted Successfully")
         return redirect(url_for('index2'))
-
-# @app.route('/insert', methods = ['POST','GET'])
-# def insert():
-#     msg = ''
-#     if request.method == "POST":
-#         flash("Data Inserted Successfully")
-#         slno = request.form['slno']
-#         event_name = request.form['event_name']
-#         event_type = request.form['event_type']
-#         start_date= request.form['start_date']
-#         end_date= request.form['end_date']
-#         fee= request.form['fee']
-#         description= request.form['description']
-#         cur = mysql.connection.cursor()
-#         cur.execute("""
-#                UPDATE eventss
-#                SET slno=%s
-#                WHERE id=%s
-#             """, (slno,id))
-#         event=cur.fetchone()
-#         if event:
-#             msg= 'event exists'
-#         else:
-#             cur.execute("""UPDATE eventss
-#                SET event_name=%s, event_type=%s, start_date=%s, end_date=%s, fee=%s, description=%s WHERE slno=%s
-#             """, (event_name, event_type,start_date,end_date,fee,description,slno))
-#         mysql.connection.commit()
-#         return redirect(url_for('index2'))
 
 
 @app.route('/delete/<string:id_data>', methods = ['GET'])
@@ -304,6 +264,7 @@ def update():
         mysql.connection.commit()
         return redirect(url_for('index2'))
 
+
 # app.route('/description')
 # def description():
 #     cur = mysql.connection.cursor()
@@ -312,7 +273,7 @@ def update():
 #     cur.close()
 #     return render_template('description.html', eventss=data )
 
-@app.route('/regconfirm/<string:id_data>/<string:etype>', methods = ['GET'])
+@app.route('/regconfirm/<string:id_data>/<string:etype>', methods = ['POST','GET'])
 def regconfirm(id_data,etype):
     flash("Registered for event Successfully")
     cur = mysql.connection.cursor()
@@ -320,7 +281,7 @@ def regconfirm(id_data,etype):
     data = cur.fetchall()
     cur.close()
     mysql.connection.commit()
-    return render_template('studSecond.html', eventss=data )
+    return render_template('studSecond.html',eventss=data)
 
 
 import nltk
