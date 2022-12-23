@@ -6,7 +6,7 @@
     --right-msg-bg: #579ffb;
   }
   
-  html {
+  /* html {
     box-sizing: border-box;
   }
   
@@ -25,7 +25,7 @@
     height: 100vh;
     background-image: var(--body-bg);
     font-family: Helvetica, sans-serif;
-  }
+  } */
   
   .msger {
     display: flex;
