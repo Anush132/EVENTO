@@ -1,28 +1,36 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title> Register </title>
-		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">			
+		<title> Login </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">		
 	</head>
-	<body class="login_background"></br></br></br></br></br>
-		<div align="center">
-		<div align="center" class="border">
-			<div class="header">
-				<h1 class="word">Register</h1>
+	<body class="background">
+			<div class="flex-login-container">
+					<div class="login-logo"></div>
+					<div class="login-title">
+						<h1>EVENTO</h1>
+						<p>One-stop for all the events</p>
+					</div>	
 			</div>
-			<h2 class="word">
-				<form action="{{ url_for('register') }}" method="post">
-				<div class="msg">{{ msg }}</div>
-                    <input id="college" name="college" type="text" placeholder="Enter College Name" class="textbox"/></br></br>
-					<input id="id" name="id" type="text" placeholder="Enter College ID" class="textbox"/></br></br>
-					<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
-					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
-					<input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br>
-					<input type="submit" class="btn" value="Sign Up"></br>
-				</form>
-			</h2>
-			<p class="bottom">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
-		</div>
-		</div>
+				<div class="login_body">
+					<!-- <img alt="" class="avatar" src=""> -->
+					<div class="register-heading">Register</div>
+					<form action="{{url_for('register') }}" method="post">
+						<div>{{ msg }}</div>
+						<input id="college" name="college" type="text" placeholder="Enter College name" class="textbox" />
+						<input id="id" name="id" type="text" placeholder="Enter College ID" class="textbox"/>
+						<input id="username" name="username" type="text" placeholder="Enter username" class="textbox" />
+						<input id="password" name="password" type="password" placeholder="Enter password" class="textbox"/>
+						<input id="email" name="email" type="text" placeholder="Enter email" class="textbox"/></br>
+						
+						<input type="submit" class="btn" value="Sign Up"/>
+					</form>
+					
+					<div class="option-msg">
+						<p>Already have an account? <a href="{{url_for('login')}}">Sign In here</a></p>
+					</div>
+				</div>
+			</div>
+
 	</body>
 </html>
