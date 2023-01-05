@@ -108,11 +108,12 @@ def register():
 @app.route('/stulogin', methods =['GET', 'POST'])
 def stulogin():
     msg = ''
+    global stu_username 
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        username = request.form['username']
+        stu_username = request.form['username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM students WHERE username = % s AND password = % s', ( username, password, ))
+        cursor.execute('SELECT * FROM students WHERE username = % s AND password = % s', ( stu_username, password, ))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
@@ -120,7 +121,7 @@ def stulogin():
             session['username'] = account['username']
             msg = 'Logged in successfully !'
             return render_template('studentBase.html')
-        elif not username or not password :
+        elif not stu_username or not password :
             msg = 'Details missing!'
         else:
             msg = 'Incorrect username / password !'
@@ -151,7 +152,7 @@ def sturegister():
         elif not re.match(r'[A-Za-z0-9]+', username):
             msg = 'Username must contain only characters and numbers !'
         else:
-            cursor.execute('INSERT INTO students VALUES (%s, % s, % s, % s, % s, % s, %s)', (first_name, last_name,phone,email,college, username, password))
+            cursor.execute('INSERT INTO students (first_name, last_name,phone,email,college, username, password) VALUES (%s, % s, % s, % s, % s, % s, %s)', (first_name, last_name,phone,email,college, username, password))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
             return render_template('stulogin.html', msg = msg)
@@ -272,11 +273,11 @@ def update():
 #     cur.close()
 #     return render_template('description.html', eventss=data )
 
-@app.route('/regconfirm/<string:id_data>/<string:etype>', methods = ['POST','GET'])
-def regconfirm(id_data,etype):
+@app.route('/regconfirm/<string:id_data>', methods = ['POST','GET'])
+def regconfirm(id_data):
     flash("Registered for event Successfully")
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM eventss WHERE slno=%s and event_type=%s", (id_data,etype))
+    cur.execute("update students set events_id=%s where username=%s", (id_data,stu_username))
     data = cur.fetchall()
     cur.close()
     mysql.connection.commit()
