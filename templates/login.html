@@ -48,7 +48,20 @@
 					<!-- <img alt="" class="avatar" src=""> -->
 					<div class="login-heading">Login</div>
 					<form action="{{url_for('login') }}" method="post">
-						<input id="college" name="college" type="text" placeholder="Enter College name" class="textbox" />
+						<!-- <input id="college" name="college" type="text" placeholder="Enter College name" class="textbox" /> -->
+						<select class="college-drop" name="college" id="college">
+							<option >Enter College Name</option>
+							<option value="Atria Institute Of Technology">Atria Institute Of Technology</option>
+							<option value="Bangalore Institute of Technology">Bangalore Institute of Technology </option>
+							<option value="BMS Institute Of Technology">BMS Institute Of Technology</option>
+							<option value="Cambridge Institute of Technology">Cambridge Institute of Technology</option>
+							<option value="CMR Institute Of Technology">CMR Institute Of Technology</option>
+							<option value="Don Bosco Institute Of Technology">Don Bosco Institute Of Technology</option>
+							<option value="Nitte Meenakshi Institute of Technology">Nitte Meenakshi Institute of Technology</option>
+							<option value="Ramaiah Institute Of Technology">Ramaiah Institute of Technology</option>
+							<option value="RNS Institute of Technology">RNS Institute of Technology</option>
+							<option value="RV College of Engineering">RV College of Engineering</option>
+						</select>
 						<input id="id" name="id" type="text" placeholder="Enter College ID" class="textbox"/>
 						<input id="username" name="username" type="text" placeholder="Enter username" class="textbox" />
 						<input id="password" name="password" type="password" placeholder="Enter password" class="textbox"/></br>
