@@ -119,7 +119,7 @@ def stulogin():
             # session['id'] = account['id']
             session['username'] = account['username']
             msg = 'Logged in successfully !'
-            return render_template('studSecond.html')
+            return render_template('studentBase.html')
         elif not username or not password :
             msg = 'Details missing!'
         else:
@@ -237,7 +237,6 @@ def delete(id_data):
     mysql.connection.commit()
     return redirect(url_for('index2'))
 
-
 @app.route('/view/<string:id_data>', methods = ['POST','GET'])
 def view(id_data):
     cur = mysql.connection.cursor()
@@ -281,7 +280,8 @@ def regconfirm(id_data,etype):
     data = cur.fetchall()
     cur.close()
     mysql.connection.commit()
-    return render_template('studSecond.html',eventss=data)
+    # return render_template('studSecond.html',eventss=data)
+    return redirect(url_for('Hackathon'))
 
 
 import nltk
