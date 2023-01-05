@@ -1,0 +1,78 @@
+CREATE DATABASE IF NOT EXISTS `geeklogin` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `geeklogin`;
+
+CREATE TABLE IF NOT EXISTS `accounts` (
+	`college` varchar(100) NOT NULL,
+	`id` varchar(5) PRIMARY KEY,
+    `username` varchar(50) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `accounts` (`college` , `id`, `username`, `password`, `email`) VALUES ('Cambridge Institute of Technology','CIT', 'camb@123', '123', 'principal@cit.in');
+INSERT INTO `accounts` (`college` , `id`, `username`, `password`, `email`) VALUES ('Bangalore Institute of Technology','BIT', 'bang@456', '456', 'principal@bit.in');
+
+
+select * from accounts;
+
+CREATE TABLE IF NOT EXISTS `eventss` (
+	`id` varchar(5) references accounts(`id`),
+    `slno` varchar(11) primary key ,
+    `event_type` varchar(50),
+    `event_name` varchar(50) ,
+    `start_date` date ,
+    `end_date` date ,
+    `fee` varchar(20),
+    `description` varchar(2000) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `eventss` (`id`,`slno`,`event_type`, `event_name`, `start_date`, `end_date`,`fee`,`description`) VALUES 
+('CIT','ES101','Sports','GAME ON !!', '2022-12-30', '2023-01-07', '500', 'description'),
+('CIT','ES102','Sports','Sports Star', '2023-01-02', '2023-01-07', '1000', 'description'),
+('BIT','ES103','Sports','Tug-Of-War', '2023-01-03', '2023-01-10', '700', 'description'),
+('BIT','ES104','Sports','League of Legends', '2023-01-01', '2023-01-07', '500', 'description'),
+('BIT','ES105','Sports','Chase the Game', '2023-01-03', '2023-01-10', '700', 'description'),
+('BIT','EC101','Cultural', 'Paradise- A Celebration', '2023-01-03', '2023-01-10', '600', 'description'),
+('BIT','EC102','Cultural', 'PhotoVille', '2023-01-04', '2023-01-11', '200', 'description'),
+('CIT','EC103','Cultural', 'Nritya', '2023-01-04', '2023-01-08', '500', 'description'),
+('CIT','EC104','Cultural', 'Doodle on a Plate', '2023-01-05', '2023-01-09', '500', 'description'),
+('BIT','EC105','Cultural', 'Gaana', '2023-01-06', '2023-01-13', '200', 'description'),
+('CIT','ESe101','Seminar','Cyber Security', '2023-01-03', '2023-01-10', 'Free', 'description'),
+('CIT','ESe102','Seminar','Nanomaterials', '2023-01-04', '2023-01-12', 'Free', 'description'),
+('CIT','ESe103','Seminar','Internet Of Things', '2023-01-05', '2023-01-12', '100', 'description'),
+('BIT','ESe104','Seminar','Quantum Physics', '2023-01-06', '2023-01-13', 'Free', 'description'),
+('BIT','ESe105','Seminar','Personality Developement', '2023-01-03', '2023-01-10', 'Free', 'description'),
+('BIT','EW101','Workshop','Algorythm-Intro to ML', '2023-01-07', '2023-01-14', '500', 'description'),
+('BIT','EW102','Workshop','Hands-on-IOT', '2023-01-08', '2023-01-15', '1000', 'description'),
+('BIT','EW103','Workshop','Web Development', '2023-01-07', '2023-01-14', '500', 'description'),
+('CIT','EW104','Workshop','IC Engine', '2023-01-15', '2023-01-23', '1000', 'description'),
+('CIT','EW105','Workshop','3D Printing', '2023-01-13', '2023-01-17', '500', 'description'),
+('CIT','EH101','Hackathon','Maze Runner', '2023-01-03', '2023-01-10', '100', 'description'),
+('CIT','EH102','Hackathon','ByteCode', '2023-01-08', '2023-01-15', '100', 'description'),
+('CIT','EH103','Hackathon','TechHunt', '2023-01-07', '2023-01-14', '50', 'description'),
+('BIT','EH104','Hackathon','Techquila', '2023-01-15', '2023-01-23', '100', 'description'),
+('BIT','EH105','Hackathon','WarTech', '2023-01-13', '2023-01-17', '100', 'description');
+
+
+select * from eventss;
+-- delete from eventss where slno='EH106';
+CREATE TABLE IF NOT EXISTS `students` (
+	`first_name` varchar(50) NOT NULL,
+    `last_name` varchar(50) NOT NULL,
+    `phone` char(11) NOT NULL,
+    `email` varchar(50) NOT NULL,
+    `college` varchar(100) NOT NULL,
+    `username` varchar(50) NOT NULL,
+    `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into students values ('Anushka','Yadav','9632462265','anushka34161@gmail.com','Cambridge Institute of Technology','anush','132');
+
+select * from students;
+-- drop table accounts;
+-- drop table eventss;
+-- drop table students; 
+
+
+
