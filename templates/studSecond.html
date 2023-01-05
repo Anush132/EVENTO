@@ -40,7 +40,7 @@
 	
 	
 					<tr>
-				  <!-- <th>Serial no.</th> -->
+				  <th>Event ID</th> 
 				  <th>Event Name</th>
 				  <th>Event Type</th>
 				  <th>Start date</th>
@@ -52,7 +52,7 @@
 	
 					{% for row in eventss %}
 					<tr>
-						<!-- <td>{{row.0}}</td> -->
+					 <td>{{row['slno']}}</td>
 					<td>{{row['event_name']}}</td>
 					<td>{{row['event_type']}}</td>
 					<td>{{row['start_date']}}</td>
@@ -87,7 +87,28 @@
 				   
 				   
 							<div class="modal-body">
-							   <p>description should be here.</p>
+							   <p>
+								College name : BMS Institute of Technology <br>
+
+Phase 1 : The participants will be asked to impress the Jury by showcasing their 
+Skills/Talent.<br>
+
+Phase 2 : One member from each team will be participating in a group discussion.
+
+TOP 5 TEAMS WILL ENTER INTO PHASE 3.<br>
+
+Phase 3 : In this round contestants will be tested on the basis of their coding and pressure 
+handling skills.<br>
+
+Team Size : 3-4 People<br>
+
+Prize:<br>
+Winner: 1500/- and Goodies<br>
+Runners up: 750/- <br>
+
+Venue : BSN Block, 4th floor, CR-403<br>
+Timings : 1:00pm to 3:00pm <br>
+							   </p>
 							   
 							</div>
 				   
@@ -95,7 +116,7 @@
 							<div class="modal-footer">
 				   
 								
-								<a href="/regconfirm/{{row['slno']}}/{{row['event_type']}}" class="btn btn-danger btn-xs" onclick="return confirm('Confirm participation?')">Register</a>
+							   <a href="/regconfirm/{{row['slno']}}/{{row['event_type']}}" class="btn btn-danger btn-xs" onclick="return confirm('Confirm participation?')">Register</a>
 							   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				   
 				   
