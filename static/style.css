@@ -170,6 +170,16 @@
     opacity:2;
 }
 
+.college-drop{
+    width:200px;
+    padding:10px;
+    color:black;
+    margin:10px 95px;
+    border-radius:10px;
+    border: 1px solid;
+    transition: all 0.1s ease-in;
+}
+
 .textbox{
     width:200px;
     padding:10px;
